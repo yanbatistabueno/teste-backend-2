@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/characters.css" />
+  </head>
+  <body>
+    {% if session %}
+    {% if characters != None and characters|length != 0 %}
+    <div class="characters-container">
+    {% for character in characters %}
+    <a href="{{url_for('data.data_character', name=character[1])}}" class="character-card">   
+      <img src="{{character[3]}}" alt="" />
+      <div class="card-text">
+        <p>Nome: {{character[1]}}</p>
+      <p>Status: {%if character[2] == "Alive" %}<span class="alive">{{character[2]}}</span> {% elif character[2] == "Dead" %}<span class="dead">{{character[2]}}</span> {% elif character[2] == "unknown" %}<span>{{character[2]}}</span>{% endif %}</p>
+      </div>
+    </a>
+    {% endfor %} {% else %} <p>Sem personagens no banco de dados, espere um momento.</p> {% endif %}
+    {% else %}
+    <p>Faça login para acessar a api</p>
+
+    {% endif %} 
+  </body>
+</html>

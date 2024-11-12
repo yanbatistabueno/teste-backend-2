@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/characters.css" />
+  </head>
+  <body>
+    {% if current_character != None %}
+    <div>
+      <div class="character-view-container">
+        <img src="{{current_character[3]}}" alt="" />
+        <div class="character-info">
+          <p>Name: {{current_character[1]}}</p>
+          <p>Status: {{current_character[2]}}</p>
+          <p>URL: {{current_character[4]}}</p>
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <p>Personagem não existe.</p>
+    {% endif %}
+  </body>
+</html>

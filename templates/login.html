@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    {% if acesso == "false" %}
+    <p>Credenciais erradas</p>
+    {% endif %} {% if acesso == "true" %}
+    <p>Usuário cadastrado com sucesso</p>
+    {% endif %} {% if loggout == True %}
+    <p>Loggout realizado com sucesso!</p>
+    {% endif %}
+    <form action="/login" method="POST">
+      <input name="username" placeholder="User Name" type="text" />
+      <input name="password" placeholder="Password" type="password" />
+      <button type="submit">Logar</button>
+    </form>
+
+    <a href="/login/loggout">Deslogar</a>
+  </body>
+</html>

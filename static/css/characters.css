@@ -1,0 +1,47 @@
+.characters-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.character-card {
+  border-style: solid;
+  border-radius: 15px;
+  border-color: gray;
+  text-decoration: none;
+  transition: all ease-in-out 0.15s;
+}
+
+.character-card:hover {
+  transform: scale(97%);
+}
+
+.character-card p {
+  color: black;
+}
+
+.character-card img {
+  border-radius: 15px;
+}
+
+.character-card .card-text {
+  padding: 10px;
+}
+
+.alive {
+  color: green;
+}
+
+.dead {
+  color: red;
+}
+
+.character-view-container {
+  display: flex;
+  gap: 20px;
+}
+
+.character-view-container .character-info {
+  display: flex;
+  flex-direction: column;
+}
